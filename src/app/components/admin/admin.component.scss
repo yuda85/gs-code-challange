@@ -1,0 +1,17 @@
+pre {
+  margin: 0;
+}
+hr {
+  margin: 3px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.flex {
+  > div {
+    border-right: 1px solid #171717;
+    padding: 10px;
+  }
+}

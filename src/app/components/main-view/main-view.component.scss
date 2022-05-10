@@ -1,0 +1,39 @@
+.question-box {
+  border: 1px solid #171717;
+  border: 1px solid #171717;
+  width: 520px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 3px 15px -3px #000000;
+
+  pre {
+    white-space: pre-line;
+    font-size: 18px;
+  }
+}
+
+.navbar {
+  justify-content: center;
+  img {
+    width: 290px;
+  }
+}
+
+.navbar-brand {
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.brand-logo {
+  max-width: 85%;
+  width: 1250px;
+  margin: -10px 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 157px;
+}

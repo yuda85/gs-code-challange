@@ -1,0 +1,78 @@
+<!-- Top navigation -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+    <img
+      class="brand-logo"
+      src="assets/growthspace.webp"
+      alt="growthspace logo"
+    />
+  </a>
+</nav>
+
+<!-- Sidebar navigation -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class="fas fa-user"></i>GS Code Challange
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-12">
+            <div class="media">
+              <img
+                class="align-self-start mr-5 img-thumbnail rounded-circle"
+                src="{{
+                  user.photoURL ? user.photoURL : '/assets/dummy-user.png'
+                }}"
+                alt="{{ user.displayName }}"
+              />
+              <div class="media-body">
+                <h1>
+                  Hello:
+                  <strong>{{
+                    user.displayName ? user.displayName : "User"
+                  }}</strong>
+                </h1>
+                <div class="question-box">
+                  <h2>The Challange:</h2>
+
+                  <pre>
+                    {{ question }}
+                  </pre>
+                </div>
+                <br />
+
+                <div class="question-box" *ngIf="solution">
+                  <h2>The Solution:</h2>
+
+                  <pre>
+                    {{ solution }}
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bigbutton" (click)="clickRingerButton()">CLICK ME!!</div>
+    </main>
+  </div>
+</div>

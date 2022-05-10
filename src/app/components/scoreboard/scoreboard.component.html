@@ -1,0 +1,19 @@
+<div class="scoreboard">
+  <h3>SCOREBOARD</h3>
+  <div
+    class="scoreboard__progress"
+    *ngFor="let user of users; let i = index; trackBy: trackByFn"
+  >
+    <h5>{{ user.displayName }} - {{ user.points }} points</h5>
+
+    <div class="progress">
+      <div
+        class="progress__bar"
+        [ngStyle]="{
+          width: (user.points ? user.points : 0) * 10 + 'px',
+          background: colors[i]
+        }"
+      ></div>
+    </div>
+  </div>
+</div>

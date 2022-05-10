@@ -1,0 +1,112 @@
+<p>admin works!</p>
+<!-- <app-fireworks></app-fireworks> -->
+
+<div class="flex" style="display: flex; gap: 20px">
+  <div class="left">
+    <h2>Set Questions</h2>
+    <label for="">question</label>
+    <textarea
+      #question
+      type="text"
+      placeholder="question"
+      style="height: 100px; width: 400px"
+    ></textarea>
+    <br />
+    <button (click)="addQuestion(question)">submit</button>
+
+    <br />
+    <label for="">solution</label>
+    <textarea
+      #solution
+      type="text"
+      placeholder="question"
+      style="height: 100px; width: 400px"
+    ></textarea>
+    <br />
+    <button (click)="addSolution(solution)">submit</button>
+
+    <br />
+
+    <button type="button" (click)="clearQuestion()">clear question</button>
+  </div>
+
+  <div class="center" style="height: 461px; overflow: auto">
+    <h2>Solutions</h2>
+    <div class="solutions">
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <h5>#</h5>
+              <hr />
+            </td>
+            <td>
+              <h5>Question</h5>
+              <hr />
+            </td>
+            <td>
+              <h5>Answer</h5>
+              <hr />
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="solution" *ngFor="let item of solutions; let i = index">
+            <td>
+              {{ i }}
+              <hr />
+            </td>
+            <td>
+              <pre>
+                {{ item.question }}
+              </pre>
+              <hr />
+            </td>
+            <td>
+              <pre>
+                {{ item.answer }}
+              </pre>
+              <hr />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="right">
+    <h2>Ringers</h2>
+    <button (click)="toggleFireworks()">YToggle Fireworks</button>
+    <br />
+    <div class="ringers">
+      <div class="ringer" *ngFor="let ringer of ringers; let i = index">
+        {{ i + 1 }}. {{ ringer.userName }}
+      </div>
+
+      <button (click)="resetButtonringers()">Clear ringers</button>
+      <br />
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Add Points</h2>
+
+    <div class="ringers">
+      <div class="ringer" *ngFor="let user of users; let i = index">
+        {{ i + 1 }}. {{ user.displayName }} | {{ user.points }} Points
+        <br />
+        <button (click)="addPoint(user)">Add Point</button>
+        <br />
+        <button (click)="subtractPoint(user)">Subtract Point</button>
+      </div>
+
+      <br />
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <app-scoreboard></app-scoreboard>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<button (click)="resetUsers()">RESET ALL USERS!!!</button>
