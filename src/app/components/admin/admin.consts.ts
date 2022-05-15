@@ -82,13 +82,19 @@ export const QUESTIONS: Array<any> = [
     question: `
     27.toString();
     `,
-    answer: `'called'`,
+    answer: `> Uncaught SyntaxError: Invalid or unexpected token`,
   },
   {
     question: `
     27.toString();
     `,
     answer: `27..toString();`,
+  },
+  {
+    question: `
+    JSON.stringify("production") === "production";
+    `,
+    answer: `false`,
   },
 
   {
