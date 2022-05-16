@@ -9,7 +9,7 @@ import { GameService } from './shared/services/game.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angularfiebase-authentication';
+  title = 'GS Code Challenge';
   fireworksState: boolean = false;
 
   constructor(
